@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: board
+Implementation-Version: 1.0.0-SNAPSHOT
+Built-By: cst
+Implementation-Vendor-Id: hackathon
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_202
+Main-Class: hackathon.board.BoardApplication
+

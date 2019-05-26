@@ -68,7 +68,7 @@ public class StudentController {
     int studentId = checkLogin(session, ConstUtil.STUDENT);
     int bookId = lessonService.joinLesson(lessonId, studentId);
 
-    return new HttpResponse<>("106.14.178.184:8080/board/" + bookId + "/" + studentId);
+    return new HttpResponse<>(ConstUtil.URL + bookId + "/" + studentId);
   }
 
   @GetMapping("/getStudentNoteBook")
