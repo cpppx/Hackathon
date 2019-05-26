@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test
+
+  session:
+    timeout: 30m
+  jpa:
+    database: mysql
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+server:
+  port: 18081
+
+
