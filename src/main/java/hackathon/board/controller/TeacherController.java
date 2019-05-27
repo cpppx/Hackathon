@@ -104,10 +104,13 @@ public class TeacherController {
   }
 
   @PostMapping("/endLesson")
-  public HttpResponse<Void> endLesson(int lessonId, HttpSession session) {
+  public HttpResponse<Void> endLesson(int lessonId, HttpSession session) throws IOException {
     int teacherId = checkLogin(session, ConstUtil.TEACHER);
 
     lessonService.endLesson(lessonId, teacherId);
+    int bookId = teacherNoteService.getTeacherNoteBookByLessonId(lessonId).getId();
+    LiveLessonData liveLessonData = new LiveLessonData("END", "");
+    WebSocketController.sendMessage(bookId, new Gson().toJson(liveLessonData));
 
     return new HttpResponse<>(null);
   }

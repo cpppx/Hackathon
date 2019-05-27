@@ -33,7 +33,7 @@ public interface CourseService {
 
   List<CourseVO> studentGetCoursesByOngoingLessons(int studentId);
 
-  List<CourseVO> searchCourses(String keyword, int index, int offset);
+  List<CourseVO> searchCourses(int studentId, String keyword, int index, int offset);
 
   void joinCourse(int courseId, int studentId);
 }

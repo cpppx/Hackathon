@@ -4,7 +4,6 @@ import hackathon.board.entity.Point;
 import hackathon.board.entity.TeacherNoteItem;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import java.util.List;
  */
 @Getter
 @AllArgsConstructor
-@ToString
 public class TeacherNoteItemVO {
   private int id;
 

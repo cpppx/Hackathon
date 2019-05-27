@@ -3,7 +3,6 @@ package hackathon.board.vo;
 import hackathon.board.entity.StudentNoteBook;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +12,6 @@ import java.util.stream.Collectors;
  */
 @Getter
 @AllArgsConstructor
-@ToString
 public class StudentNoteBookVO {
   private Integer id;
   private Integer lessonId;

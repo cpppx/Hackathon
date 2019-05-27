@@ -3,14 +3,14 @@ package hackathon.board.vo;
 import hackathon.board.entity.Course;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
 /**
  * @author cst
  */
 @Getter
 @AllArgsConstructor
-@ToString
+@NoArgsConstructor
 public class CourseVO {
   private Integer id;
 

@@ -14,5 +14,5 @@ import java.util.Optional;
 public interface LessonDao extends JpaRepository<Lesson, Integer> {
   List<Lesson> findByCourseId(int courseId);
 
-  Optional<Lesson> findByIdAndTeacherId(int id,int teacherId);
+  Optional<Lesson> findByIdAndTeacherId(int id, int teacherId);
 }

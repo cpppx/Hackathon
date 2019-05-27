@@ -34,8 +34,9 @@ public class StudentController {
   }
 
   @GetMapping("/searchCourses")
-  public HttpResponse<List<CourseVO>> searchCourses(String keyword, int index, int offset) {
-    return new HttpResponse<>(courseService.searchCourses(keyword, index, offset));
+  public HttpResponse<List<CourseVO>> searchCourses(HttpSession session, String keyword, int index, int offset) {
+    int studentId = checkLogin(session, ConstUtil.STUDENT);
+    return new HttpResponse<>(courseService.searchCourses(studentId, keyword, index, offset));
   }
 
   @GetMapping("/studentGetUnfinishedCourses")
@@ -68,7 +69,7 @@ public class StudentController {
     int studentId = checkLogin(session, ConstUtil.STUDENT);
     int bookId = lessonService.joinLesson(lessonId, studentId);
 
-    return new HttpResponse<>(ConstUtil.URL + bookId + "/" + studentId);
+    return new HttpResponse<>((ConstUtil.URL + "websocket/" + bookId).replace("http", "ws"));
   }
 
   @GetMapping("/getStudentNoteBook")

@@ -40,6 +40,9 @@ public class LessonServiceImpl implements LessonService {
 
   @Override
   public int joinLesson(int lessonId, int studentId) {
+    TeacherNoteBook teacherNoteBook = teacherNoteBookDao.findByLessonId(lessonId)
+            .orElseThrow(() -> new NotFoundException("找不到该节课的板书"));
+
     if (!studentNoteBookDao.existsByLessonIdAndStudentId(lessonId, studentId)) {
       StudentNoteBook book = new StudentNoteBook();
       book.setLessonId(lessonId);
@@ -47,8 +50,6 @@ public class LessonServiceImpl implements LessonService {
       studentNoteBookDao.save(book);
     }
 
-    TeacherNoteBook teacherNoteBook = teacherNoteBookDao.findByLessonId(lessonId)
-            .orElseThrow(() -> new NotFoundException("找不到该节课的板书"));
     return teacherNoteBook.getId();
   }
 
